@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple weather app</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Rubik:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/CSS/weather-icons.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script defer src="script.js"></script>
+  </head>
+  <body>
+    <article class="container">
+      <main class="weather">
+        <div class="weather__current">
+          <div class="weather__main">
+            <img
+              src="/png/10000.png"
+              alt="weather icon"
+              class="weather__icon"
+            />
+            <p class="weather__degree">25<span>&deg;C</span></p>
+          </div>
+          <div class="weather__information">
+            <div class="weather__information-box">
+              <p class="weather__information-location">Paris</p>
+              <p class="weather__information-day">Monday</p>
+              <p class="weather__information-date">18/09/23</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="weather__week">
+          <div class="weather__week__day">
+            <div class="weather__week__day-box">
+              <p class="weather__week__day-date">19/09/23</p>
+              <p class="weather__week__day-name">Tuesday</p>
+
+              <div class="weather__week__day-icon-box">
+                <img
+                  src="/png/10000.png"
+                  alt="weather icon"
+                  class="weather__week__day-icon"
+                />
+              </div>
+              <p class="weather__week__day-degree">25<span>&deg;C</span></p>
+            </div>
+          </div>
+
+          <div class="weather__week__day">
+            <div class="weather__week__day-box">
+              <p class="weather__week__day-date">20/09/23</p>
+              <p class="weather__week__day-name">Wednesday</p>
+
+              <div class="weather__week__day-icon-box">
+                <img
+                  src="/png/10000.png"
+                  alt="weather icon"
+                  class="weather__week__day-icon"
+                />
+              </div>
+              <p class="weather__week__day-degree">25<span>&deg;C</span></p>
+            </div>
+          </div>
+
+          <div class="weather__week__day">
+            <div class="weather__week__day-box">
+              <p class="weather__week__day-date">21/09/23</p>
+              <p class="weather__week__day-name">Thursday</p>
+
+              <div class="weather__week__day-icon-box">
+                <img
+                  src="/png/10000.png"
+                  alt="weather icon"
+                  class="weather__week__day-icon"
+                />
+              </div>
+              <p class="weather__week__day-degree">25<span>&deg;C</span></p>
+            </div>
+          </div>
+
+          <div class="weather__week__day">
+            <div class="weather__week__day-box">
+              <p class="weather__week__day-date">22/09/23</p>
+              <p class="weather__week__day-name">Friday</p>
+
+              <div class="weather__week__day-icon-box">
+                <img
+                  src="/png/10000.png"
+                  alt="weather icon"
+                  class="weather__week__day-icon"
+                />
+              </div>
+              <p class="weather__week__day-degree">25<span>&deg;C</span></p>
+            </div>
+          </div>
+
+          <div class="weather__week__day">
+            <div class="weather__week__day-box">
+              <p class="weather__week__day-date">23/09/23</p>
+              <p class="weather__week__day-name">Saturday</p>
+              <!-- <i class="wi wi-day-sunny weather__week__day-icon"></i> -->
+              <div class="weather__week__day-icon-box">
+                <img
+                  src="/png/10000.png"
+                  alt="weather icon"
+                  class="weather__week__day-icon"
+                />
+              </div>
+              <p class="weather__week__day-degree">25<span>&deg;C</span></p>
+            </div>
+          </div>
+        </div>
+      </main>
+      <form class="search__box">
+        <input type="text" class="input" placeholder="Search location" />
+        <button class="btn">
+          <img src="/SVG/search.svg" alt="search icon" class="search__icon" />
+        </button>
+      </form>
+      <div class="spinner__box">
+        <img src="/png/10000.png" alt="weather icon" class="spinner__icon" />
+        <div class="error__message-box hidden">
+          <p class="error__message">We could not find the location</p>
+          <p class="error__text">Click to continue</p>
+        </div>
+      </div>
+    </article>
+  </body>
+</html>
