@@ -16,6 +16,10 @@
   </head>
   <body>
     <article class="container">
+      <div class="header">
+        <h1 class="header__main">Simple weather widget</h1>
+        <p class="header__text">Search forecast for every location</p>
+      </div>
       <main class="weather">
         <div class="weather__current">
           <div class="weather__main">
@@ -28,8 +32,8 @@
           </div>
           <div class="weather__information">
             <div class="weather__information-box">
-              <p class="weather__information-location">Paris</p>
-              <p class="weather__information-day">Monday</p>
+              <p class="weather__information-location">Location</p>
+              <p class="weather__information-day">Week day</p>
               <p class="weather__information-date">18/09/23</p>
             </div>
           </div>
@@ -123,7 +127,7 @@
           <img src="/SVG/search.svg" alt="search icon" class="search__icon" />
         </button>
       </form>
-      <div class="overlay">
+      <div class="overlay hidden">
         <div class="spinner__box">
           <img src="/png/10000.png" alt="weather icon" class="spinner__icon" />
         </div>

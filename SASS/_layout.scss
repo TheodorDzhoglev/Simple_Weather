@@ -3,10 +3,23 @@
   background-image: linear-gradient(to right, #f6d5f7, #fbe9d7);
   display: flex;
   flex-direction: column;
-  gap: 3rem;
+  gap: 5rem;
   justify-content: center;
   align-items: center;
   position: relative;
+}
+
+.header {
+  text-align: center;
+  text-transform: uppercase;
+  &__main {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+
+  &__text {
+    font-size: 1.5rem;
+  }
 }
 
 .weather {
@@ -15,7 +28,7 @@
   background-color: rgba(#fff, 0.1);
   border-radius: 15px;
   box-shadow: 2px 2px 2rem rgba(0, 0, 0, 0.05);
-  display: grid;
+  display: none;
   grid-template-rows: 3fr 2fr;
   text-transform: uppercase;
 

@@ -12,6 +12,7 @@ const overlay = document.querySelector(".overlay");
 const spinnerIcon = document.querySelector(".spinner__icon");
 const errorBox = document.querySelector(".error__message-box");
 const errorMsg = document.querySelector(".error__message");
+const weatherBox = document.querySelector(".weather");
 
 //Variables
 
@@ -99,7 +100,7 @@ const changeColor = function (temp) {
 
 // Function updating the UI
 
-const updateMainUI = function (data) {
+const updateUI = function (data) {
   //Changing colors
 
   changeColor(data.timelines.daily[0].values.temperatureAvg);
@@ -175,6 +176,7 @@ const hideError = function () {
 
 // Function initiating the app
 const init = function () {
+  /*
   getLocation()
     .then((response) => {
       const { latitude: lat, longitude: lng } = response.coords;
@@ -185,7 +187,7 @@ const init = function () {
     })
     .then((data) => {
       currLocation.textContent = data[0].address.city;
-      updateMainUI(data[1]);
+      updateUI(data[1]);
       overlay.classList.toggle("hidden");
     })
     .catch((err) => {
@@ -196,6 +198,9 @@ const init = function () {
       );
       hideError();
     });
+    */
+  currDay.textContent = weekDay(0);
+  currDate.textContent = getDate(0);
 
   searchBox.addEventListener("submit", function (e) {
     e.preventDefault();
@@ -205,8 +210,9 @@ const init = function () {
       .then((data) => {
         currLocation.textContent = search.value;
         search.value = "";
-        updateMainUI(data);
+        updateUI(data);
         overlay.classList.toggle("hidden");
+        weatherBox.style.display = "grid";
       })
       .catch((err) => {
         renderErrorMsg(
