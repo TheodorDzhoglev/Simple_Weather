@@ -1,1 +1,195 @@
-*{margin:0;padding:0}*,*::after,*::before{box-sizing:inherit}html{box-sizing:border-box;font-size:62.5%}body{font-family:"Poppins", sans-serif;color:#333}.container{height:100vh;background-image:linear-gradient(to right, #f6d5f7, #fbe9d7);display:flex;flex-direction:column;gap:3rem;justify-content:center;align-items:center;position:relative}.weather{min-height:50vh;width:50vw;background-color:rgba(255,255,255,0.1);border-radius:15px;box-shadow:2px 2px 2rem rgba(0,0,0,0.05);display:grid;grid-template-rows:3fr 2fr;text-transform:uppercase}.weather__current{padding:4rem;display:flex;align-items:center}.weather__icon{width:10rem;height:10rem}.weather__main{flex:1;display:flex;gap:4rem;align-items:center;justify-content:space-around;font-size:6rem}.weather__degree{display:flex}.weather__degree span{font-size:3rem;font-weight:400;align-self:flex-start}.weather__information{flex:1;display:flex;flex-direction:column;align-items:center}.weather__information-box{margin:0 auto}.weather__information-location{font-size:1.4rem}.weather__information-day{font-weight:500;font-size:2rem;margin-top:-2px}.weather__information-date{font-size:1.2rem;font-weight:300}.weather__week{border-top:1px solid rgba(51,51,51,0.2);display:flex;flex-wrap:wrap}.weather__week__day{flex:1;padding:1rem;display:flex;flex-direction:column;align-items:center}.weather__week__day-box{height:100%;display:flex;flex-direction:column;align-items:center}.weather__week__day-date{flex:1.5;font-weight:300;font-size:1rem}.weather__week__day-name{flex:2;font-weight:400;font-size:1.4rem}.weather__week__day-icon{height:4rem;width:4rem}.weather__week__day-icon-box{flex:4}.weather__week__day-degree{flex:2;font-weight:500;font-size:1.4rem}.search__box{width:20%;display:flex;align-items:center;justify-content:center}.search__box .input{width:90%;font-size:1.4rem;font-family:inherit;text-transform:uppercase;color:inherit;background-color:rgba(255,255,255,0.1);border-radius:3rem;border:none;padding:0.7rem 2rem;transition:all 0.2s;margin-right:-3.5rem;box-shadow:2px 2px 2rem rgba(0,0,0,0.05)}.search__box .input:focus{outline:none;width:100%;background-color:rgba(255,255,255,0.4)}.search__box .input::-moz-placeholder{font-size:1.2rem;text-transform:uppercase}.search__box .input::placeholder{font-size:1.2rem;text-transform:uppercase}.search__box .btn{height:2rem;width:2rem;border:none;background-color:transparent;cursor:pointer;border-radius:1}.search__box .btn:focus{outline:none}.search__box .btn:active{transform:translateY(2px)}.search__box .search__icon{width:80%;height:80%}.spinner__box{position:absolute;height:100%;width:100%;-webkit-backdrop-filter:blur(30px);backdrop-filter:blur(30px);opacity:1;transition:all 0.2s ease-out}.spinner__box .spinner__icon{display:inline;height:5rem;width:5rem;position:absolute;top:50%;left:50%;transform:translate(-50%, -50%);animation:spin 2s linear infinite}.spinner__box .error__message-box{background-color:rgba(255,255,255,0.4);padding:1rem 2rem;border-radius:15px;position:absolute;top:50%;left:50%;transform:translate(-50%, -50%);text-align:center;z-index:22}.spinner__box .error__message-box .error__message{font-size:3rem;font-weight:300}.spinner__box .error__message-box .error__text{font-size:1.5rem;font-weight:300}.hidden{opacity:0;z-index:-100}@keyframes spin{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+* {
+  margin: 0;
+  padding: 0; }
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit; }
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; }
+  @media only screen and (max-width: 56.25em) {
+    html {
+      font-size: 50%; } }
+
+body {
+  font-family: "Poppins", sans-serif;
+  color: #333; }
+
+.container {
+  min-height: 100vh;
+  background-image: linear-gradient(to right, #f6d5f7, #fbe9d7);
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  justify-content: center;
+  align-items: center;
+  position: relative; }
+
+.weather {
+  min-height: 50vh;
+  width: 50vw;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  box-shadow: 2px 2px 2rem rgba(0, 0, 0, 0.05);
+  display: grid;
+  grid-template-rows: 3fr 2fr;
+  text-transform: uppercase; }
+  @media only screen and (max-width: 56.25em) {
+    .weather {
+      width: 75vw; } }
+  .weather__current {
+    padding: 4rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center; }
+  .weather__icon {
+    width: 10rem;
+    height: 10rem; }
+  .weather__main {
+    flex: 1 1 auto;
+    display: flex;
+    gap: 4rem;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 6rem; }
+  .weather__degree {
+    display: flex; }
+    .weather__degree span {
+      font-size: 3rem;
+      font-weight: 400;
+      align-self: flex-start; }
+  .weather__information {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
+    .weather__information-box {
+      margin: 0 auto; }
+    .weather__information-location {
+      font-size: 1.4rem; }
+    .weather__information-day {
+      font-weight: 500;
+      font-size: 2rem;
+      margin-top: -2px; }
+    .weather__information-date {
+      font-size: 1.2rem;
+      font-weight: 300; }
+  .weather__week {
+    border-top: 1px solid rgba(51, 51, 51, 0.2);
+    display: flex;
+    flex-wrap: wrap; }
+    .weather__week__day {
+      flex: 1 1;
+      padding: 1rem; }
+      .weather__week__day-box {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center; }
+      .weather__week__day-date {
+        flex: 1.5;
+        font-weight: 300;
+        font-size: 1rem; }
+      .weather__week__day-name {
+        flex: 2;
+        font-weight: 400;
+        font-size: 1.4rem; }
+      .weather__week__day-icon {
+        height: 4rem;
+        width: 4rem; }
+      .weather__week__day-icon-box {
+        flex: 4; }
+      .weather__week__day-degree {
+        flex: 2;
+        font-weight: 500;
+        font-size: 1.4rem; }
+
+.search__box {
+  width: 40%;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+  .search__box .input {
+    width: 90%;
+    font-size: 1.4rem;
+    font-family: inherit;
+    text-transform: uppercase;
+    color: inherit;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 3rem;
+    border: none;
+    padding: 0.7rem 2rem;
+    transition: all 0.2s;
+    margin-right: -3.5rem;
+    box-shadow: 2px 2px 2rem rgba(0, 0, 0, 0.05); }
+    .search__box .input:focus {
+      outline: none;
+      width: 100%;
+      background-color: rgba(255, 255, 255, 0.4); }
+    .search__box .input::placeholder {
+      font-size: 1.2rem;
+      text-transform: uppercase; }
+  .search__box .btn {
+    height: 2rem;
+    width: 2rem;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    border-radius: 1; }
+    .search__box .btn:focus {
+      outline: none; }
+    .search__box .btn:active {
+      transform: translateY(2px); }
+  .search__box .search__icon {
+    width: 80%;
+    height: 80%; }
+
+.overlay {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  backdrop-filter: blur(30px);
+  opacity: 1;
+  transition: all 0.2s ease-out; }
+  .overlay .spinner__box {
+    position: absolute;
+    height: 5rem;
+    width: 5rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); }
+  .overlay .spinner__icon {
+    display: inline;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    animation: spin 2s linear infinite; }
+  .overlay .error__message-box {
+    background-color: rgba(255, 255, 255, 0.4);
+    padding: 1rem 2rem;
+    border-radius: 15px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 22; }
+    .overlay .error__message-box .error__message {
+      font-size: 3rem;
+      font-weight: 300; }
+    .overlay .error__message-box .error__text {
+      font-size: 1.5rem;
+      font-weight: 300; }
+
+.hidden {
+  opacity: 0;
+  z-index: -100; }
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg); }
+  100% {
+    transform: rotate(360deg); } }

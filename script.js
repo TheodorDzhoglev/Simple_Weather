@@ -8,7 +8,7 @@ const currIcon = document.querySelector(".weather__icon");
 const weekDays = document.querySelectorAll(".weather__week__day-box");
 const search = document.querySelector(".input");
 const searchBox = document.querySelector(".search__box");
-const spinnerBox = document.querySelector(".spinner__box");
+const overlay = document.querySelector(".overlay");
 const spinnerIcon = document.querySelector(".spinner__icon");
 const errorBox = document.querySelector(".error__message-box");
 const errorMsg = document.querySelector(".error__message");
@@ -159,7 +159,19 @@ const renderErrorMsg = function (err, code, msg) {
   errorBox.classList.toggle("hidden");
 };
 
-//Clear the input field
+// Adding an event listener to hide the error message
+
+const hideError = function () {
+  overlay.addEventListener(
+    "click",
+    () => {
+      overlay.classList.toggle("hidden");
+      errorBox.classList.toggle("hidden");
+      spinnerIcon.classList.toggle("hidden");
+    },
+    { once: true }
+  );
+};
 
 // Function initiating the app
 const init = function () {
@@ -174,7 +186,7 @@ const init = function () {
     .then((data) => {
       currLocation.textContent = data[0].address.city;
       updateMainUI(data[1]);
-      spinnerBox.classList.toggle("hidden");
+      overlay.classList.toggle("hidden");
     })
     .catch((err) => {
       renderErrorMsg(
@@ -182,18 +194,19 @@ const init = function () {
         429,
         "We have reached the limit. Please try again later"
       );
+      hideError();
     });
 
   searchBox.addEventListener("submit", function (e) {
     e.preventDefault();
     search.blur();
-    spinnerBox.classList.toggle("hidden");
+    overlay.classList.toggle("hidden");
     getJson(`${TOMORROW_URL}location=${search.value}&daily&${TOMORROW_API_KEY}`)
       .then((data) => {
         currLocation.textContent = search.value;
         search.value = "";
         updateMainUI(data);
-        spinnerBox.classList.toggle("hidden");
+        overlay.classList.toggle("hidden");
       })
       .catch((err) => {
         renderErrorMsg(
@@ -202,14 +215,9 @@ const init = function () {
           "You have reached the limit. Please try again later"
         );
         search.value = "";
+        hideError();
       });
-  });
-
-  spinnerBox.addEventListener("click", () => {
-    spinnerBox.classList.toggle("hidden");
-    errorBox.classList.toggle("hidden");
-    spinnerIcon.classList.toggle("hidden");
   });
 };
 
-init();
+// init();
